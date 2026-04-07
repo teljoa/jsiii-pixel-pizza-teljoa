@@ -1,0 +1,194 @@
+:root {
+    --primary: #ff6b6b;
+    --primary-dark: #e05454;
+    --bg: #f7f9fc;
+    --card-bg: #ffffff;
+    --text: #2d3436;
+    --gray: #dfe6e9;
+    --success: #2ecc71;
+    --error: #e74c3c;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 20px;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.logo h1 { margin: 0; color: var(--primary); }
+.logo p { margin: 5px 0 0; color: #636e72; font-size: 0.9em; }
+
+.btn-filter {
+    background: transparent;
+    border: 2px solid var(--gray);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.btn-filter:hover, .btn-filter.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* GRID LAYOUT */
+.main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .main-grid { grid-template-columns: 1fr; }
+}
+
+/* CATALOG (PIZZAS) */
+.pizzas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.pizza-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.pizza-card:hover { transform: translateY(-3px); }
+
+.pizza-emoji { font-size: 4rem; display: block; margin-bottom: 10px; }
+.pizza-title { font-weight: bold; font-size: 1.1em; display: block; margin-bottom: 5px; }
+.pizza-category { font-size: 0.8em; color: #636e72; background: #f1f2f6; padding: 2px 8px; border-radius: 10px; }
+.pizza-price { font-size: 1.2em; color: var(--primary); font-weight: bold; margin: 10px 0; display: block; }
+
+.btn-add {
+    background: var(--text);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-add:hover { background: black; }
+
+/* SIDEBAR (CART & FORM) */
+.card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.cart-list {
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--gray);
+}
+
+.cart-total {
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 2px solid var(--gray);
+}
+
+.empty-msg { color: #b2bec3; text-align: center; font-style: italic; }
+
+/* FORM STYLES & VALIDATION STATES */
+.form-group { margin-bottom: 15px; }
+
+label { display: block; margin-bottom: 5px; font-weight: 600; font-size: 0.9em; }
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--gray);
+    border-radius: 6px;
+    box-sizing: border-box; /* Importante para padding */
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus { border-color: var(--primary); }
+
+/* --- CLASES PARA EL EXAMEN (JS) --- */
+
+/* Error State */
+.input-error {
+    border-color: var(--error) !important;
+    background-color: #fff5f5;
+}
+
+/* Success State */
+.input-success {
+    border-color: var(--success) !important;
+}
+
+/* Mensajes de error */
+.error-msg {
+    color: var(--error);
+    font-size: 0.8em;
+    margin-top: 5px;
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+/* ---------------------------------- */
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover { background: var(--primary-dark); }
+.full-width { width: 100%; }

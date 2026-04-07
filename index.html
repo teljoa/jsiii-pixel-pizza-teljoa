@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen: PixelPizza 🍕</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <header>
+            <div class="logo">
+                <h1>🍕 PixelPizza</h1>
+                <p>Las mejores pizzas de la consola a tu casa</p>
+            </div>
+            
+            <nav class="filters" id="filters-container">
+                <button class="btn-filter active" data-category="all">Todas</button>
+                <button class="btn-filter" data-category="Carne">Carne</button>
+                <button class="btn-filter" data-category="Vegetariana">Vegetariana</button>
+            </nav>
+        </header>
+
+        <main class="main-grid">
+            
+            <section class="catalog-section">
+                <h2>Menú</h2>
+                <div id="pizzas-grid" class="pizzas-grid">
+                    <p class="loading-text">Cargando horno...</p>
+                </div>
+
+            </section>
+
+            <aside class="sidebar">
+                
+                <div class="card cart-card">
+                    <h3>🛒 Tu Pedido</h3>
+                    <ul id="cart-items" class="cart-list">
+                        <!-- Esto solo aparece cuando el carrito está vacío -->
+                        <li class="empty-msg">El carrito está vacío</li>
+                        <li class="cart-item">
+                            <span>Pepperoni</span>
+                            
+                            <div class="qty-controls">
+                                <button class="btn-tiny" data-action="decrease">-</button>
+                                <span class="qty-value">2</span>
+                                <button class="btn-tiny" data-action="increase">+</button>
+                            </div>
+
+                            <span>22 €</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="cart-total">
+                        <span>Total:</span>
+                        <span id="total-price">22.00 €</span>
+                    </div>
+                </div>
+
+                <div class="card form-card">
+                    <h3>📦 Datos de Entrega</h3>
+                    <form id="order-form" novalidate>
+                        
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" placeholder="Mínimo 3 letras">
+                            <small class="error-msg">Error en el nombre</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" id="direccion" placeholder="Calle, número...">
+                            <small class="error-msg">Dirección muy corta</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" placeholder="9 dígitos">
+                            <small class="error-msg">Teléfono inválido</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="usuario@email.com">
+                            <small class="error-msg">Email incorrecto</small>
+                        </div>
+
+                        <button type="submit" id="btn-submit" class="btn-primary full-width">
+                            Finalizar Pedido
+                        </button>
+                    </form>
+                </div>
+
+            </aside>
+        </main>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
