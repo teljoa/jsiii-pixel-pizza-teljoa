@@ -1,0 +1,11 @@
+{
+    "pizzas":[
+        {"id":1,"nombre":"Margarita","categoria":"Vegetariana","precio":9,"imagen":"🧀"},
+        {"id":2,"nombre":"Pepperoni","categoria":"Carne","precio":11,"imagen":"🍕"},
+        {"id":3,"nombre":"Hawaiana","categoria":"Carne","precio":10,"imagen":"🍍"},
+        {"id":4,"nombre":"Cuatro Quesos","categoria":"Vegetariana","precio":12,"imagen":"🧀"},
+        {"id":5,"nombre":"Diablo","categoria":"Picante","precio":13,"imagen":"🌶️"},
+        {"id":6,"nombre":"Barbacoa","categoria":"Carne","precio":12,"imagen":"🍖"}
+    ],
+    "pedidos":[]
+}
